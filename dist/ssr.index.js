@@ -582,14 +582,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), (_vm.labels) ? [(_vm.toggled) ? _c('span', {
     staticClass: "v-switch-label v-left",
     style: (_vm.labelStyle)
-  }, [_vm._t("checked", [
-    [_vm._v(_vm._s(_vm.labelChecked))]
-  ])], 2) : _c('span', {
+  }, [_vm._t("checked", [_vm._v("\n        " + _vm._s(_vm.labelChecked) + "\n      ")])], 2) : _c('span', {
     staticClass: "v-switch-label v-right",
     style: (_vm.labelStyle)
-  }, [_vm._t("unchecked", [
-    [_vm._v(_vm._s(_vm.labelUnchecked))]
-  ])], 2)] : _vm._e()], 2)
+  }, [_vm._t("unchecked", [_vm._v("\n        " + _vm._s(_vm.labelUnchecked) + "\n      ")])], 2)] : _vm._e()], 2)
 },staticRenderFns: []}
 
 /***/ }),
@@ -603,7 +599,7 @@ var content = __webpack_require__(4);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-__webpack_require__(9)("2283861f", content, true);
+__webpack_require__(9)("2bf6d7c5", content, true);
 
 /***/ }),
 /* 9 */

@@ -20,12 +20,12 @@
     <template v-if="labels">
       <span class="v-switch-label v-left" :style="labelStyle" v-if="toggled">
         <slot name="checked">
-          <template>{{ labelChecked }}</template>
+          {{ labelChecked }}
         </slot>
       </span>
       <span class="v-switch-label v-right" :style="labelStyle" v-else>
         <slot name="unchecked">
-          <template>{{ labelUnchecked }}</template>
+          {{ labelUnchecked }}
         </slot>
       </span>
     </template>
