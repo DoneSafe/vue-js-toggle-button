@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: './src/index.js',
@@ -15,12 +16,11 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            'scss': 'vue-style-loader!css-loader!sass-loader'
-          }
-        }
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: ['vue-style-loader', 'css-loader','sass-loader']
       },
       {
         test: /\.js$/,
@@ -40,15 +40,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#source-map',
+  optimization: { minimize: true },
+  devtool: 'source-map',
+  mode: 'production',
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    }),
-    new OptimizeCSSPlugin({
-      cssProcessorOptions: {
-        safe: true
-      }
-    })
+    new VueLoaderPlugin({ extractCSS: true }),
   ]
 }
